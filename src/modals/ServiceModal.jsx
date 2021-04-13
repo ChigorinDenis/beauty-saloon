@@ -10,7 +10,7 @@ function ModalExampleModal() {
       onOpen={() => setOpen(true)}
       open={open}
       size='mini'
-      trigger={<Button>Show Modal</Button>}
+      // trigger={<Button>Show Modal</Button>}
     >
       <Modal.Header>Select a Photo</Modal.Header>
       <Modal.Content image>

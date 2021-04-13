@@ -10,8 +10,8 @@ import {
   Header,
   Rating,
   Checkbox, 
-  Icon
 } from "semantic-ui-react";
+import i18next from 'i18next';
 
 function ModalExampleModal() {
   const [open, setOpen] = React.useState(false);
@@ -23,13 +23,17 @@ function ModalExampleModal() {
       open={open}
       closeIcon
       size="mini"
-      trigger={<Button>LogIn</Button>}
+      // trigger={<Button>LogIn</Button>}
     >
-      <Modal.Header>Запись к мастеру</Modal.Header>
+      <Modal.Header>
+        {i18next.t('recordToMaster.title')}
+      </Modal.Header>
       <Modal.Content>
         <Form>
           <Form.Field>
-            <label htmlFor="date">Дата записи</label>
+            <label htmlFor="date">
+              {i18next.t('recordToMaster.labelData')}
+            </label>
             <input placeholder="First Name" type="date" />
           </Form.Field>
           <Card>
@@ -51,7 +55,7 @@ function ModalExampleModal() {
             </Card.Content>
             <Card.Content extra>
               <Header as="h5" color="purple">
-                Доступное время
+                {i18next.t('recordToMaster.availableTime')}
               </Header>
               <Label.Group>
                 <Label as="a" basic>
@@ -75,7 +79,7 @@ function ModalExampleModal() {
           <Header 
             as='h5'
           >
-            Выберите дополнительные опции
+            {i18next.t('recordToMaster.options')}
           </Header>
           <List divided verticalAlign="middle">
             <List.Item>
@@ -95,7 +99,7 @@ function ModalExampleModal() {
       </Modal.Content>
       <Modal.Actions>
         <Button
-          content="Забронировать"
+          content={i18next.t('recordToMaster.submit')}
           labelPosition="right"
           icon="checkmark"
           onClick={() => setOpen(false)}
