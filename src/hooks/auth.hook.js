@@ -7,7 +7,7 @@ const useAuth = () => {
     console.log('loggedIn',loggedIn);
   };
   const logOut = () => {
-    // localStorage.removeItem('userId');
+    localStorage.removeItem('userId');
     setLoggedIn(false);
   };
   return { 

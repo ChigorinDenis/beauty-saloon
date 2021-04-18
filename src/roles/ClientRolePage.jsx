@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from "react-router-dom";
 import Menu from "../components/Header";
 import CardService from '../components/CardService';
@@ -51,7 +50,7 @@ function ClientRolePage() {
             </Container>
             <Grid container>
               <h1>Добро пожаловать</h1>
-              {/* <CustomCarousel /> */}
+              <CustomCarousel />
               <Grid.Row>
                 {services.map((service) => {
                   return (
@@ -71,7 +70,7 @@ function ClientRolePage() {
               </Grid.Row>
             </Grid>
           </Route>
-          <Route path='/login'>
+          <Route path='/login' >
             <LoginPage />
           </Route>
         </Switch>

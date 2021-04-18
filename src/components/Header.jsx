@@ -55,8 +55,7 @@ function Header() {
         >
           <AuthButton />
         </Menu.Item>
-      </Menu>
-   
+      </Menu>   
   )
 }
 

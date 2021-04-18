@@ -5,6 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 import ClientRolePage from './roles/ClientRolePage';
+import AdminRolePage from './roles/AdminRolePage';
+import LoginPage from './components/LoginPage';
 import useAuth from './hooks/auth.hook.js';
 import authContext from './contexts/authContex.js';
 
@@ -16,7 +18,14 @@ export default function App() {
   } = useAuth();
   return (
     <authContext.Provider value={{ loggedIn, logIn, logOut }}>
-      <ClientRolePage />
+      <Router>
+        <Switch>
+          <Route path='/' component={AdminRolePage} />
+          <Route path='/login' >
+             <LoginPage />
+          </Route>
+        </Switch>
+      </Router>
     </authContext.Provider>
   );
 }
